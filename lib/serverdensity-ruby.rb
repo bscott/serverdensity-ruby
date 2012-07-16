@@ -35,44 +35,44 @@ GETS = {
 }
 
 POSTS = {
-    'alerts': (
-        'pause', 'resume',
-    ),
-    'devices': (
-        'add', 'addGroup', 'delete', 'rename',
-    ),
-    'metrics': (
-        'postback',
-    ),
-    'users': (
-        'add', 'delete',
-    ),
+    'alerts': {'pause', 'resume'}
+        
+    },
+    'devices': {'add', 'addGroup', 'delete', 'rename'}
+        
+   },
+    'metrics': {'postback'}
+        
+    },
+    'users': {'add', 'delete'}
+        
+    }
 }
 
 API_VERSION = '1.4'
 BASE_URL = "https://api.serverdensity.com/#{API_VERSION}/%(section)s/%(method)s"
 
-class SDApi << self
-	VERSION = 0.0.1
+class SDApi
+	VERSION = "0.0.1"
 
 	def initialize(account, username, password, api_key, name="None", gets = GETS, posts = POSTS, base_url = BASE_URL, api_version = API_VERSION)
 
-    self.account = account
-    self.username = username
-    self.password = password
-    self.api_key = api_key 
-    self.name = name
-    self.gets = gets
-    self.posts = posts
-    self.base_url = base_url
-    self.api_version = api_version
+    account = account
+    username = username
+    password = password
+    api_key = api_key 
+    name = name
+    gets = gets
+    posts = posts
+    base_url = base_url
+    api_version = api_version
 	
 	end
 
-	def request(self, method, data={}, params={})
+	def request(method, data={}, params={})
 
 		# Check for apiKey in the params
-		if params.include?(api_key)
+		if params.include?(api_key) then end
 
 
 	end
